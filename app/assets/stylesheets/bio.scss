@@ -1,0 +1,21 @@
+.bio.jumbotron {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 20%, rgba(255,255,255,0.45)), url(/assets/rainier_hero.jpg);
+  background-position: 100% 62%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: $grey-d;
+
+  @media (max-width: 500px) {
+    background-size: cover;
+  }
+}
+
+.img-header {
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  img {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}

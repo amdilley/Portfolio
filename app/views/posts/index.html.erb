@@ -1,0 +1,36 @@
+<div class="blog jumbotron">
+  <div class="container">
+    <h1>Blog</h1>
+  </div>
+</div>
+
+<div class="container-fluid" id="blog-entries">
+  <div class="row">
+    <div class="col-md-9 col-xs-12">
+      <% @posts.order("created_at DESC").first(3).each do |post| %>
+        <div class="entry">
+          <h2><%= link_to_unless_current post.title, post %></%></h2>
+          <small><%= post.created_at.strftime("%b %e, %Y") %></small>
+          <%= simple_format post.body %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-3 col-xs-12 row">
+      <% prev_month = nil %>
+      <% @posts.where({ created_at: (Time.now.midnight - 1.year)..(Time.now.midnight + 1.day) }).each do |post| %>
+        <% if post.created_at.strftime("%B") != prev_month %>
+        <% if !prev_month.nil? %>
+          </div>
+        <% end %>
+          <div class="month col-md-12 col-sm-4 col-xs-12">
+            <div class="month-title"><%= post.created_at.strftime("%B") %></div>
+        <% end %>
+        <% prev_month = post.created_at.strftime("%B") %>
+          <%= content_tag :div, class: "entry-link" do -%>
+            <div><%= link_to post.title, post %></div>
+          <% end -%>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

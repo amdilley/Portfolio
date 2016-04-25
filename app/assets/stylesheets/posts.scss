@@ -1,0 +1,45 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.blog.jumbotron {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.95) 20%, rgba(255,255,255,0.45)), url(/assets/keyboard_hero.jpg);
+  background-position: 100% 62%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: $grey-d;
+}
+
+#blog-entries {
+  .row {
+    padding: 0 10px;
+  }
+}
+
+.entry {
+  small {
+    font-size: 85%;
+    color: $grey-9;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $grey-d;
+  }
+
+  &:last-child {
+    margin-bottom: 40px;
+  }
+}
+
+.month {
+  margin-bottom: 20px;
+  padding-left: 20px;
+
+  .entry-link {
+    margin-left: 20px;
+  }
+}
+
+a:focus {
+  outline: none;
+}

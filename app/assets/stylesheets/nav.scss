@@ -1,0 +1,63 @@
+body {
+  padding-top: 50px;
+}
+
+.navbar-default {
+  background-color: $grey-3;
+  border-color: $grey-9;
+  .navbar-brand {
+    font-family: $font-kreon;
+    color: $white;
+    &:hover {
+      color: $white;
+    }
+  }
+  .navbar-nav {
+    .active {
+      & > a, & > a:active, & > a:focus, & > a:hover {
+        color: $white;
+        background-color: transparent;
+      }
+    }
+    & > li > a {
+      color: $grey-c;
+      background-color: transparent;
+      &:active, &:focus, &:hover {
+        color: $white;
+      }
+    }
+  }
+  .navbar-toggle {
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+    &:active, &:focus, &:hover {
+      background-color: transparent;
+    }
+    label {
+      padding: 9px 10px;
+      -moz-transition: -moz-transform 0.5s;
+      -ms-transition: -ms-transform 0.5s;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: transform 0.5s;
+    }
+    #toggleNav {
+      display: none;
+      &:checked ~ label {
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+    }
+    .fa {
+      color: $white;
+      font-size: 18px;
+    }
+  }
+
+  .navbar-form {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+}

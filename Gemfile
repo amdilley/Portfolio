@@ -29,6 +29,12 @@ gem 'spring',        group: :development
 # friendly URL IDs
 gem 'friendly_id'
 
+# Require Github markup gem for text to html converters
+gem 'github-markup'
+
+# Require the Markdown converter gem
+gem 'redcarpet'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

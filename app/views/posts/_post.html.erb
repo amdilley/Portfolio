@@ -3,7 +3,7 @@
     <div class="entry">
       <h1><%= link_to_unless_current @post.title, @post %></%></h1>
       <small><%= @post.created_at.strftime("%b %e, %Y") %></small>
-      <%= simple_format @post.body %>
+      <%= markup_html @post.body %>
     </div>
   </div>
 </div>

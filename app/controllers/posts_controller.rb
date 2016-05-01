@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.friendly.find(params[:id])
+    
     if request.path != post_path(@post)
       redirect_to @post, status: :moved_permanently
     else
@@ -108,6 +109,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :description, :body)
     end
 end

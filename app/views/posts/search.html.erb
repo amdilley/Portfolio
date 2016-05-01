@@ -12,7 +12,7 @@
         <div class="entry">
           <h2><%= link_to_unless_current post.title, post %></%></h2>
           <small><%= post.created_at.strftime("%b %e, %Y") %></small>
-          <%= simple_format post.body %>
+          <%= simple_format post.description %>
         </div>
       <% end %>
     </div>

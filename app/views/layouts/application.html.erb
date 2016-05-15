@@ -23,9 +23,12 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav">
+        <!-- Remove if block when projects section is ready -->
+        <% if false %>
         <%= content_tag :li, class: ("active" if current_page?(controller: "projects")) do -%>
           <%= link_to "Projects", { controller: "projects" } %>
         <% end -%>
+        <% end %>
         <%= content_tag :li, class: ("active" if current_page?(controller: "posts")) do -%>
           <%= link_to "Blog", { controller: "posts" } %>
         <% end -%>

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def block_ip_addresses
-    head :unauthorized if  params[:path] == "disney/ad-master/adMaster"
+    head :unauthorized if params[:path] == "disney/ad-master/adMaster"
   end
 
   def current_ip_address

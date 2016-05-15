@@ -4,9 +4,11 @@
       <h1><%= link_to_unless_current @post.title, @post %></%></h1>
       <small>
         <%= @post.created_at.strftime("%b %e, %Y") %>
-        <% @post.tags.split(',').each do |tag| %>
-          <%= link_to({ controller: 'posts', action: 'search_tags', tag: tag }, class: 'tag-link') do %>
-            <span class="label label-default"><%= tag %></span>
+        <% if @post.tags %>
+          <% @post.tags.split(',').each do |tag| %>
+            <%= link_to({ controller: 'posts', action: 'search_tags', tag: tag }, class: 'tag-link') do %>
+              <span class="label label-default"><%= tag %></span>
+            <% end %>
           <% end %>
         <% end %>
       </small>

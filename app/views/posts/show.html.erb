@@ -10,9 +10,11 @@
 
   <%= render partial: @post %>
 
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Destroy', '#', data: { toggle: 'modal', target: '.delete-modal' } %> |
-  <%= link_to 'Back', posts_path %>
+  <div class="post-controls col-md-offset-2 col-md-8 col-xs-12">
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Destroy', '#', data: { toggle: 'modal', target: '.delete-modal' } %> |
+    <%= link_to 'Back', posts_path %>
+  </div>
 
   <%= render partial: "delete_modal", object: @post %>
 </div>

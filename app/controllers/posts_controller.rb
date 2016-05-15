@@ -85,7 +85,7 @@ class PostsController < ApplicationController
   # Handle all search queries
   def search
     terms = params[:query].split
-    query = terms.map { |term| "title like '%#{term}%' OR body like '%#{term}%'" }.join(" OR ")
+    query = terms.map { |term| "title like '%#{term}%' OR body like '%#{term}%' OR tags like '%#{term}%'" }.join(" OR ")
     
     @posts = Post.where(query).order("created_at DESC").first(10)
   end
@@ -93,6 +93,13 @@ class PostsController < ApplicationController
   # Redirect to posts#search on search form submit
   def search_redirect
     redirect_to "/posts/search/#{params[:query]}"
+  end
+
+  # Tags exact match
+  def search_tags
+    tag = params[:tag]
+
+    @posts = Post.where("tags like '%,#{tag}' OR tags like '#{tag},%' OR tags like '%,#{tag},%' OR tags like '#{tag}'").order("created_at DESC")
   end
 
   private
@@ -109,6 +116,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :body)
+      params.require(:post).permit(:title, :description, :body, :tags)
     end
 end

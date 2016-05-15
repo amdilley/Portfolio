@@ -1,0 +1,20 @@
+<div class="blog jumbotron">
+  <div class="container">
+    <h1>Blog</h1>
+  </div>
+</div>
+
+<div class="container-fluid" id="blog-entries">
+  <div class="row">
+    <h4 class="col-xs-12">All posts tagged "<%= params[:tag] %>"</h4>
+    <div class="col-xs-12">
+      <% @posts.each do |post| %>
+        <div class="entry">
+          <h2><%= link_to_unless_current post.title, post %></%></h2>
+          <small><%= post.created_at.strftime("%b %e, %Y") %></small>
+          <%= simple_format post.description %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

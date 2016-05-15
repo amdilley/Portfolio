@@ -2,7 +2,14 @@
   <div class="col-md-9 col-xs-12">
     <div class="entry">
       <h1><%= link_to_unless_current @post.title, @post %></%></h1>
-      <small><%= @post.created_at.strftime("%b %e, %Y") %></small>
+      <small>
+        <%= @post.created_at.strftime("%b %e, %Y") %>
+        <% @post.tags.split(',').each do |tag| %>
+          <%= link_to({ controller: 'posts', action: 'search_tags', tag: tag }, class: 'tag-link') do %>
+            <span class="label label-default"><%= tag %></span>
+          <% end %>
+        <% end %>
+      </small>
       <%= markup_html @post.body %>
     </div>
   </div>

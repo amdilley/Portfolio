@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   post 'posts/search'        => 'posts#search_redirect'
   resources :posts
 
+  # Tags
+  get 'posts/tag/:tag' => 'posts#search_tags'
+
   # Projects actions
   resources :projects
 

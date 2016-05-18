@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :authenticate, :except => [ :index, :show, :feed, :search, :search_redirect ]
+  before_filter :authenticate, only: [ :new, :create, :update, :destroy ]
   before_action :set_post, only: [ :show, :edit, :update, :destroy ]
 
   # GET /posts

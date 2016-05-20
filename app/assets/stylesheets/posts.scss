@@ -17,8 +17,10 @@
 
 .entry {
   small {
+    margin: 15px 0 10px 0;
     font-size: 85%;
     color: $grey-9;
+    display: block;
   }
 
   &:not(:last-child) {

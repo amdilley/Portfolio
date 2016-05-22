@@ -27,7 +27,8 @@
         <% end %>
         <% prev_month = post.created_at.strftime("%B") %>
           <%= content_tag :div, class: "entry-link" do -%>
-            <div><%= link_to post.title, post %></div>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <%= link_to post.title, post %>
           <% end -%>
       <% end %>
       </div>

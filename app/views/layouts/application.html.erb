@@ -39,7 +39,7 @@
           <%= link_to "Bio", { controller: "bio" } %>
         <% end -%>
       </ul>
-      <%= form_tag "/posts/search", method: "post", role: "search", class: [ "navbar-form", "navbar-right" ] do %>
+      <%= form_tag "/blog/search", method: "post", role: "search", class: [ "navbar-form", "navbar-right" ] do %>
         <div class="form-group col-xs-10 col-sm-10">
           <%= text_field_tag "query", nil, placeholder: "Search", class: [ "form-control", "input-sm" ] %>
         </div>

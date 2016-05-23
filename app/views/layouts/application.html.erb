@@ -40,12 +40,16 @@
         <% end -%>
       </ul>
       <%= form_tag "/blog/search", method: "post", role: "search", class: [ "navbar-form", "navbar-right" ] do %>
-        <div class="form-group col-xs-10 col-sm-10">
-          <%= text_field_tag "query", nil, placeholder: "Search", class: [ "form-control", "input-sm" ] %>
+        <div class="form-group col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+          <div class="input-group">
+            <%= text_field_tag "query", nil, autocomplete: "off", placeholder: "Search", class: [ "form-control", "input-sm" ] %>
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default btn-sm">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </span>
+          </div>
         </div>
-        <button type="submit" class="btn btn-default btn-sm">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
       <% end %>
     </div>
   </div>

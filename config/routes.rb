@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   # Post actions
-  get  'posts/search/:query' => 'posts#search'
-  post 'posts/search'        => 'posts#search_redirect'
-  resources :posts
+  get  'blog/search/:query' => 'posts#search'
+  post 'blog/search'        => 'posts#search_redirect'
+  resources :posts, path: '/blog'
 
   # Tags
-  get 'posts/tag/:tag' => 'posts#search_tags'
+  get 'blog/tag/:tag' => 'posts#search_tags'
 
   # Projects actions
   resources :projects
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'feed' => 'posts#feed'
 
   # Default page
-  root :to => redirect('/posts')
+  root :to => redirect('/blog')
 
   # 404 all other attempted routes
   get '*path' => 'application#not_found'

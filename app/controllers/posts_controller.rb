@@ -93,7 +93,7 @@ class PostsController < ApplicationController
   # Redirect to posts#search on search form submit
   def search_redirect
     # URI::encode handles spaces and other characters in search field
-    redirect_to "/posts/search/#{URI::encode params[:query]}"
+    redirect_to "/blog/search/#{URI::encode params[:query]}"
   end
 
   # Tags exact match
